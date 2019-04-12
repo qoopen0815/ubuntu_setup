@@ -4,6 +4,7 @@ pwd_dir=$(pwd)
 # Setup
 mkdir -p ~/dotfiles/.vim/bundle
 ln -s ~/dotfiles/.vim ~/
+ln -s ~/dotfiles/.vimrc ~/
 
 if [ ! -e ~/dotfiles/.vim/bundle/vundle ];
 then

@@ -30,15 +30,17 @@ apt_install()
     sudo apt install -yV texlive-full
     sudo apt install -yV latexmk
     sudo apt install -yV emacs24
+    sudo apt install -yV curl
     cd ${root_pwd_dir}
 }
 
-# initial_update_package
-# apt_install
+initial_update_package
+apt_install
 
-# source ./Git/Git_installer.sh
+source ./Git/Git_installer.sh
 source ./Vim/Vim_installer.sh
-# source ./ROS/kinetic_installer.sh
-# source ./Chrome/Chrome_installer.sh
+source ./VScode/vscode_installer.sh
+source ./ROS/kinetic_installer.sh
+source ./Chrome/Chrome_installer.sh
 
 source ./Setting/setting_all.sh
