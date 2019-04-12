@@ -11,4 +11,4 @@ then
 fi
 
 vi -c PluginInstall -c qa
-${pwd_dir}/install_vimycm.sh
+python3 ~/dotfiles/.vim/bundle/YouCompleteMe/install.py --clang-completer

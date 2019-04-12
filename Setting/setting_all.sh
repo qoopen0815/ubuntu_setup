@@ -7,8 +7,8 @@ mv ./dotfiles ~/
 ln -s ~/dotfiles/.bashrc ~/
 ln -s ~/dotfiles/.inputrc ~/
 ln -s ~/dotfiles/.latexmk ~/
-ln -s ~/dotfiles/.tmuxconf ~/
+ln -s ~/dotfiles/.tmux.conf ~/
 
-source ${pwd_dir}/nocaps.sh
-source ${pwd_dir}/emacs.sh
-source ${pwd_dir}/vim.sh
+source ${pwd_dir}/Setting/nocaps.sh
+source ${pwd_dir}/Setting/emacs.sh
+source ${pwd_dir}/Setting/vim.sh
