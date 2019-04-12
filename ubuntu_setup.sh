@@ -24,7 +24,9 @@ apt_install()
     sudo apt install -yV python3-dev
     sudo apt install -yV python-pip
     sudo apt install -yV python3-pip
+    sudo apt install -yV rxvt-unicode-256color
     sudo apt install -yV tmux
+    sudo apt install -yV xsel
     sudo apt install -yV texlive-full
     sudo apt install -yV latexmk
     sudo apt install -yV emacs24
@@ -37,4 +39,6 @@ apt_install
 source ./Git/Git_installer.sh
 source ./Vim/Vim_installer.sh
 source ./ROS/kinetic_installer.sh
+source ./Chrome/Chrome_installer.sh
+
 source ./Setting/setting_all.sh
