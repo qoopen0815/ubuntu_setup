@@ -1,28 +1,40 @@
 # ubuntu_setup
 Ubuntu 16.04 auto setup script
 
-## Install Package
+# Install Package
+## Build
+- clang-4.0
+- build-essential
+- clang
+- cmake
+- llvm
 
+## Python
+- python-dev python3-pip
+- python-flake8
+- python3-dev
+- python-pip
+- python3-pip
 
-## Setting
-```bash
+## Terminal
+- rxvt-unicode-256color
+- tmux
+- xsel
 
-```
+## Tex
+- texlive-full
+- latexmk
 
-## Preparation
-- Installation of Ubuntu 16.04
-- Connect to Network
+## Editor
+- emacs24
+- vim, vim-gnome
+- vscode
 
-## Before Installation
-- Initial Update
-```bash
-sudo apt update
-sudo apt upgrade -y
-sudo apt dist-upgrade -y
-sudo reboot
-```
+## ROS
+- kinetic
+- curl
 
-## Installation
+# Installation
 - Clone this repository
 ```bash
 git clone http://github.com/calm0815/ubuntu_setup.git
