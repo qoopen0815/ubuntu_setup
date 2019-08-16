@@ -26,8 +26,8 @@ sudo apt-get install git -yV
 
 # git settings
 git config --global user.name "calm0815"
-git config --global user.email "ku_skyline_wa@yahoo.co.jp"
-git config --global core.editor 'vim -c "set fenc=utf-8"'
+git config --global user.email "calm0815@example.com"
+git config --global color.ui auto
 git config --global color.diff auto
 git config --global color.status auto
 git config --global color.branch auto
