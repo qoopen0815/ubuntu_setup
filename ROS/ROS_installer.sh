@@ -2,7 +2,7 @@
 
 pwd_dir=$(pwd)
 
-Version="kinetic"
+Version="dashing"
 
 if [ "$2" = "--auto" ]; then
 	auto_flg=1
@@ -63,21 +63,29 @@ if [ ${auto_flg} -eq 0 ]; then
 	fi
 fi
 
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
-yes | sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+# setup locale
+sudo locale-gen ja_JP ja_JP.UTF-8
+sudo update-locale LC_ALL=ja_JP.UTF-8 LANG=ja_JP.UTF-8
+export LANG=ja_JP.UTF-8
+
+# setting apt source lists
+sudo apt update
+sudo apt install curl gnupg2 lsb-release
+curl http://repo.ros2.org/repos.key | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64,arm64] http://packages.ros.org/ros2/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/ros2-latest.list'
 sudo apt update
 
-sudo apt install --force-yes -yV ros-${Version}-desktop-full
-sudo apt install -yV python-catkin-tools
+# install ROS2 packages
+sudo apt install ros-${Version}-desktop python3-colcon-common-extensions python3-rosdep python3-argcomplete
 sudo rosdep init
 rosdep update
+
+# setting environment
+echo "source /opt/ros/dashing/setup.bash" >> ~/.bashrc
 
 if ! less ~/.bashrc | grep "/opt/ros/${Version}/setup.bash" > /dev/null; then
 	echo "source /opt/ros/${Version}/setup.bash" >> ~/.bashrc
 fi
 source ~/.bashrc
-
-sudo apt install --force-yes -yV python-rosinstall
 
 echo "ROS Installer Finished !!"
