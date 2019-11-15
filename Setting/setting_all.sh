@@ -6,7 +6,7 @@ mv ./dotfiles ~/
 
 ln -s ~/dotfiles/.bashrc ~/
 ln -s ~/dotfiles/.inputrc ~/
-ln -s ~/dotfiles/.latexmk ~/
+ln -s ~/dotfiles/.latexmkrc ~/
 ln -s ~/dotfiles/.tmux.conf ~/
 
 source ${pwd_dir}/Setting/nocaps.sh
