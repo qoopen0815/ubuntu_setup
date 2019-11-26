@@ -11,19 +11,19 @@ else
 fi
 
 echo "
-    ██████╗  ██████╗ ███████╗      
+    ██████╗  ██████╗ ███████╗    ██████╗  
     ██╔══██╗██╔═══██╗██╔════╝      
     ██████╔╝██║   ██║███████╗      
     ██╔══██╗██║   ██║╚════██║      
     ██║  ██║╚██████╔╝███████║      
     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝      
                                                                           
-    ██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     ███████╗██████╗ 
-    ██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██║     ██║     ██╔════╝██╔══██╗
-    ██║██╔██╗ ██║███████╗   ██║   ███████║██║     ██║     █████╗  ██████╔╝
-    ██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║     ██╔══╝  ██╔══██╗
-    ██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗███████╗██║  ██║
-    ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝"
+    ██╗███╗      ██╗███████╗████████╗ █████╗ ██╗     ██╗     ███████╗██████╗ 
+    ██║████╗    ██║██╔════╝╚══██╔══╝██╔══██╗██║     ██║     ██╔════╝██╔══██╗
+    ██║██╔██╗  ██║███████╗      ██║      ███████║██║     ██║     █████╗  ██████╔╝
+    ██║██║╚██╗██║╚════██║      ██║      ██╔══██║██║     ██║     ██╔══╝  ██╔══██╗
+    ██║██║ ╚████║ ███████║      ██║      ██║    ██║███████╗███████╗███████╗██║  ██║
+    ╚═╝╚═╝  ╚═══╝  ╚══════╝      ╚═╝      ╚═╝    ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝"
 
 pre_version=$(ls /opt/ros/ > /dev/null)
 
@@ -70,13 +70,13 @@ export LANG=ja_JP.UTF-8
 
 # setting apt source lists
 sudo apt update
-sudo apt install curl gnupg2 lsb-release
+sudo apt install -yV curl gnupg2 lsb-release
 curl http://repo.ros2.org/repos.key | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64,arm64] http://packages.ros.org/ros2/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/ros2-latest.list'
 sudo apt update
 
 # install ROS2 packages
-sudo apt install ros-${Version}-desktop python3-colcon-common-extensions python3-rosdep python3-argcomplete
+sudo apt install -yV ros-${Version}-desktop python3-colcon-common-extensions python3-rosdep python3-argcomplete
 sudo rosdep init
 rosdep update
 
@@ -88,4 +88,4 @@ if ! less ~/.bashrc | grep "/opt/ros/${Version}/setup.bash" > /dev/null; then
 fi
 source ~/.bashrc
 
-echo "ROS Installer Finished !!"
+echo "ROS2 Installer Finished !!"

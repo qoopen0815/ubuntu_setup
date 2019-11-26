@@ -22,7 +22,7 @@ echo "
     ██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗███████╗██║  ██║
     ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝"
 
-sudo apt-get install git -yV
+sudo apt-get install -yV git
 
 # git settings
 git config --global user.name "calm0815"
