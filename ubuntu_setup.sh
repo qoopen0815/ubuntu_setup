@@ -44,7 +44,7 @@ initial_update_package
 apt_install
 
 sh ./Git/Git_installer.sh
-## sh ./Vim/Vim_installer.sh
+sh ./Vim/Vim_installer.sh
 sh ./VScode/vscode_installer.sh
 sh ./ROS/ROS_installer.sh
 sh ./Chrome/Chrome_installer.sh
