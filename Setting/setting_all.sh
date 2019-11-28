@@ -13,5 +13,5 @@ ln -s ~/dotfiles/.latexmkrc ~/
 # ln -s ~/dotfiles/.tmux.conf ~/
 
 sh ${pwd_dir}/Setting/nocaps.sh
-# sh ${pwd_dir}/Setting/emacs.sh
-# sh ${pwd_dir}/Setting/vim.sh
+sh ${pwd_dir}/Setting/emacs.sh
+sh ${pwd_dir}/Setting/vim.sh

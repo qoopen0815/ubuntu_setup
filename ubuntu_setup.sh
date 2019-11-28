@@ -35,7 +35,7 @@ apt_install()
     # sudo apt install -yV xsel
     sudo apt install -yV texlive-full
     sudo apt install -yV latexmk
-    # sudo apt install -yV emacs
+    sudo apt install -yV emacs
     sudo apt install -yV curl
     cd ${root_pwd_dir}
 }
