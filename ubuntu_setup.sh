@@ -18,6 +18,12 @@ apt_install()
     sudo apt install -yV clang
     sudo apt install -yV cmake
     sudo apt install -yV llvm
+
+    sudo apt install -yV python3-pip
+    sudo pip3 install --upgrade pip
+    sudo apt install -yV python3-venv
+    pip3 install --user jupyter
+
     # sudo apt install -yV python-dev python3-pip
     # sudo apt install -yV python-flake8
     # sudo apt install -yV python3-dev
