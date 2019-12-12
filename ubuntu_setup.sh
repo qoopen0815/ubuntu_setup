@@ -37,10 +37,10 @@ apt_install()
 initial_update_package
 apt_install
 
-source ./Git/Git_installer.sh
-source ./Vim/Vim_installer.sh
-source ./VScode/vscode_installer.sh
-source ./ROS/kinetic_installer.sh
-source ./Chrome/Chrome_installer.sh
+sh ./Git/Git_installer.sh
+sh ./Vim/Vim_installer.sh
+sh ./VScode/vscode_installer.sh
+sh ./ROS/kinetic_installer.sh
+sh ./Chrome/Chrome_installer.sh
 
 source ./Setting/setting_all.sh
