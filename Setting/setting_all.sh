@@ -1,6 +1,9 @@
 #!/bin/bash
 pwd_dir=$(pwd)
 
+# DIR name translate to English
+LANG=C xdg-user-dirs-gtk-update
+
 git clone http://github.com/calm0815/dotfiles.git
 mv ./dotfiles ~/
 
