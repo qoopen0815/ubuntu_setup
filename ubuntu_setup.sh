@@ -43,4 +43,4 @@ sh ./VScode/vscode_installer.sh
 sh ./ROS/kinetic_installer.sh
 sh ./Chrome/Chrome_installer.sh
 
-source ./Setting/setting_all.sh
+sh ./Setting/setting_all.sh
