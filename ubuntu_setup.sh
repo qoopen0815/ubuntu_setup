@@ -43,11 +43,11 @@ apt_install()
 initial_update_package
 apt_install
 
-sh ./Git/Git_installer.sh
-sh ./Vim/Vim_installer.sh
-sh ./VScode/vscode_installer.sh
-sh ./ROS/ROS_installer.sh
-sh ./Chrome/Chrome_installer.sh
-sh ./Nvidia/driver_GTX1060.sh
+source ./Git/Git_installer.sh
+source ./Vim/Vim_installer.sh
+source ./VScode/vscode_installer.sh
+# source ./ROS/ROS_installer.sh
+source ./Chrome/Chrome_installer.sh
+source ./Nvidia/driver_GTX1060.sh
 
 sh ./Setting/setting_all.sh
