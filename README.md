@@ -1,5 +1,5 @@
 # ubuntu_setup
-Ubuntu 16.04 auto setup script
+Ubuntu auto setup script
 
 # Install Package
 ## Build
