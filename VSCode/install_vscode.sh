@@ -7,4 +7,3 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode s
 sudo apt install -yV apt-transport-https
 sudo apt update
 sudo apt install -yV code
-
