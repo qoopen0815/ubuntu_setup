@@ -28,8 +28,14 @@ install_python()
     pip3 install --user jupyter
 }
 
-# Resolve time discrepancy with Windows
-sudo hwclock -D --systohc --localtime
+setting()
+{
+    # Resolve time discrepancy with Windows
+    sudo hwclock -D --systohc --localtime
+    # Capslock -> Ctrl
+    gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
+}
+
 
 # Update and upgrade apt packages
 sudo apt update
@@ -44,3 +50,5 @@ source ./Git/install_git.sh
 source ./Docker/install_docker.sh
 source ./VSCode/install_vscode.sh
 # source ./ROS/install_ros.sh
+
+setting
