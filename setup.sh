@@ -42,5 +42,5 @@ install_python
 
 source ./Git/install_git.sh
 source ./Docker/install_docker.sh
-source ./VScode/install_vscode.sh
-# source ./ROS/ROS_installer.sh
+source ./VSCode/install_vscode.sh
+# source ./ROS/install_ros.sh
