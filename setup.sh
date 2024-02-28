@@ -28,6 +28,9 @@ install_python()
     pip3 install --user jupyter
 }
 
+# Resolve time discrepancy with Windows
+sudo hwclock -D --systohc --localtime
+
 # Update and upgrade apt packages
 sudo apt update
 sudo apt upgrade -yV
