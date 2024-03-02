@@ -2,32 +2,42 @@
 
 root_pwd_dir=$(pwd)
 
-# Remove old version
-sudo apt remove docker docker-engine docker.io containerd runc docker-ce docker-ce-cli
-rm -r $HOME/.docker/desktop
+# Official Install Guide:
+# https://docs.docker.com/engine/install/ubuntu/
 
-# Install Docker
-sudo apt update
-sudo apt -y install ca-certificates curl gnupg lsb-release
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list
-sudo apt update
-sudo apt -y install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+# Uninstall old versions:
+for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
 
-# Check
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+
+# Install the Docker packages:
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+# Verify that the Docker Engine installation:
 sudo docker run hello-world
 
-# Add 'docker' to user group
-sudo systemctl unmask docker.service
-sudo systemctl enable docker
-sudo systemctl is-enabled docker
 
-# Install Docker Desktop
-sudo apt-get update
-sudo apt install gnome-terminal
-wget -P $HOME/Downloads https://desktop.docker.com/linux/main/amd64/139021/docker-desktop-4.28.0-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64&_gl=1*4ftdl6*_ga*MTgxNDYwMTE1OC4xNzA5MDQxNDEy*_ga_XJWPQMJYHQ*MTcwOTA5OTA4OS40LjEuMTcwOTEwMDgzNi41OC4wLjA.
-sudo apt -y install $HOME/Downloads/docker-desktop-*.deb
-systemctl --user start docker-desktop
-systemctl --user enable docker-desktop
+# Linux post-installation steps for Docker Engine
+# https://docs.docker.com/engine/install/linux-postinstall/
+
+# # Create the docker group.
+# sudo groupadd docker
+# # Add your user to the docker group.
+# sudo usermod -aG docker $USER
+# # Log out and log back in so that your group membership is re-evaluated.
+# newgrp docker
+# # Verify that you can run docker commands without sudo.
+# docker run hello-world
+
